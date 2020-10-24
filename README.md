@@ -1,4 +1,4 @@
-# praxi
+# _**Praxi**_
 
 ## Project setup
 ```

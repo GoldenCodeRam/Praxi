@@ -11,7 +11,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap);
 
 body {
-  background: linear-gradient(45deg, $base-color 0%, $base-color2 100%) fixed;
+  background: $dark1;
   margin: 2rem auto;
 }
 
@@ -20,6 +20,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+
+input {
+  font-family: 'PT Mono', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 12pt;
 }
 
 #nav {
