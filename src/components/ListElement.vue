@@ -1,6 +1,6 @@
 <template>
   <li class="listElement">
-    <h3 :class="{ active: showContent }">{{title}}</h3>
+    <h3 v-bind:class="{ active: showContent }">{{title}}</h3>
     <div class="elementContent" v-if="showContent">
       testing
     </div>

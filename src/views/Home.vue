@@ -1,5 +1,19 @@
 <template>
   <h1>Praxi</h1>
+  <div class="cardContainer">
+    <card
+      :icon="programmingPractices"
+      :cardTitle="'Good programming practices'"
+      :buttonText="'See more'"
+      :cardHelp="textPageContent.practicesHelp"
+    />
+    <card
+      :icon="java"
+      :cardTitle="'Java'"
+      :buttonText="'See more'"
+      :cardHelp="textPageContent.javaHelp"
+    />
+  </div>
   <div class="menu">
     <div class="menuHeader">
       <div class="menuSearchBar">
@@ -29,9 +43,15 @@
 </template>
 
 <script lang="ts">
+import textPageContent from '@/views/pageContent.json';
+
 import gsap from 'gsap';
 import ListElement from '@/components/ListElement.vue';
+import Card from '@/components/Card.vue';
 import { Ref, ref, watch } from 'vue';
+
+import programmingPractices from '@/assets/programmingLogo.svg';
+import java from '@/assets/javaLogo.svg';
 
 interface Item {
   text: string;
@@ -76,32 +96,40 @@ export default {
       });
     }
 
-    for (let i = 0; i < 30; i += 1) {
-      menuEntries.push({ text: `test ${i}`, show: false });
-    }
+    const test = require.context('@/views/guide', true);
+    console.log(test.keys());
 
     watch(textSearch, () => fillMenu(textSearch), { immediate: true });
 
     return {
+      textPageContent,
       beforeEnter,
       enter,
       leave,
       textSearch,
       searchMenuEntries,
+      programmingPractices,
+      java,
     };
   },
   components: {
     ListElement,
+    Card,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
 h1 {
   font-size: 3rem;
   color: $white0;
   user-select: none;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .menu {

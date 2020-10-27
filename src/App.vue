@@ -11,7 +11,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap);
 
 body {
-  background: $dark1;
+  background: $black0;
   margin: 2rem auto;
 }
 
