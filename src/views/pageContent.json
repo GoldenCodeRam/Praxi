@@ -1,4 +1,5 @@
 {
   "practicesHelp": "Information such as how to indent, how to space code, how to write good classes, functions, etc.",
-  "javaHelp": "Information such as how to correctly build generators, singletons, interfaces, etc."
+  "javaHelp": "Information such as how to correctly build generators, singletons, interfaces, etc.",
+  "welcomeMessage": "Here I put some information about programming practices, programming languages and such, it is like a gallery for concepts and things that are useful to know."
 }

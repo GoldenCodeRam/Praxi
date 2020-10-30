@@ -1,44 +1,21 @@
 <template>
   <h1>Praxi</h1>
+  <p class="welcome">{{textPageContent.welcomeMessage}}</p>
   <div class="cardContainer">
     <card
       :icon="programmingPractices"
       :cardTitle="'Good programming practices'"
       :buttonText="'See more'"
+      :buttonLink="'/guide/programming'"
       :cardHelp="textPageContent.practicesHelp"
     />
     <card
       :icon="java"
       :cardTitle="'Java'"
       :buttonText="'See more'"
+      :buttonLink="'/guide/java'"
       :cardHelp="textPageContent.javaHelp"
     />
-  </div>
-  <div class="menu">
-    <div class="menuHeader">
-      <div class="menuSearchBar">
-        <font-awesome-icon icon="search" />
-        <input class="searchBarInput" type="text" v-model="textSearch">
-      </div>
-    </div>
-    <div class="listContainer">
-      <transition-group
-        name="staggered-fade"
-        tag="list-element"
-        :css="false"
-        @before-enter="beforeEnter"
-        @enter="enter"
-        @leave="leave"
-      >
-        <list-element
-          v-for="(item, index) in searchMenuEntries"
-          v-bind:key="item"
-          v-bind:data-index="index"
-          v-bind:title="item.text"
-          v-bind:showContent="item.show"
-          v-on:click="item.show = !item.show"/>
-      </transition-group>
-    </div>
   </div>
 </template>
 
@@ -46,7 +23,6 @@
 import textPageContent from '@/views/pageContent.json';
 
 import gsap from 'gsap';
-import ListElement from '@/components/ListElement.vue';
 import Card from '@/components/Card.vue';
 import { Ref, ref, watch } from 'vue';
 
@@ -113,17 +89,19 @@ export default {
     };
   },
   components: {
-    ListElement,
     Card,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  font-size: 3rem;
-  color: $white0;
-  user-select: none;
+
+.welcome {
+  color: $white1;
+  font-size: 16pt;
+  max-width: 60%;
+  margin: auto;
+  padding: 2rem;
 }
 
 .cardContainer {

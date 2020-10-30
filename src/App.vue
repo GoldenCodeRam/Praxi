@@ -1,8 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">Test</router-link>
-  </div>
   <router-view/>
 </template>
 
@@ -10,9 +6,14 @@
 @import url(https://fonts.googleapis.com/css2?family=PT+Mono&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap);
 
+h1 {
+  font-size: 3rem;
+  color: $white0;
+  user-select: none;
+}
+
 body {
   background: $black0;
-  margin: 2rem auto;
 }
 
 #app {
@@ -30,7 +31,7 @@ input {
 }
 
 #nav {
-  padding: 30px;
+  padding: 20px;
 
   a {
     font-weight: bold;

@@ -13,20 +13,28 @@
       <p class="cardTitle">
         {{cardTitle}}
       </p>
-      <button class="cardButton">
+      <button class="cardButton" @click="$router.push(link)">
         {{buttonText}}
       </button>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+
 export default {
   props: {
     icon: String,
     cardTitle: String,
     buttonText: String,
+    buttonLink: String,
     cardHelp: String,
+  },
+  setup(props: any) {
+    const link = props.buttonLink !== undefined ? props.buttonLink.toString() : '';
+    return {
+      link,
+    };
   },
 };
 </script>
@@ -40,7 +48,7 @@ export default {
   border-radius: 25px;
   padding: 0.5rem;
 
-  transition: 0.25s;
+  transition: all 0.25s;
 
   .cardContainer {
     border: 2px solid $gray0;
@@ -124,5 +132,6 @@ export default {
 }
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0px 5px $gray0;
 }
 </style>
