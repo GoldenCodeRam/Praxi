@@ -16,6 +16,13 @@
       :buttonLink="'/guide/java'"
       :cardHelp="textPageContent.javaHelp"
     />
+    <card
+      :icon="codeEditor"
+      :cardTitle="'Code Formatter'"
+      :buttonText="'Format code'"
+      :buttonLink="'/codeFormatter'"
+      :cardHelp="textPageContent.javaHelp"
+    />
   </div>
 </template>
 
@@ -28,6 +35,7 @@ import { Ref, ref, watch } from 'vue';
 
 import programmingPractices from '@/assets/programmingLogo.svg';
 import java from '@/assets/javaLogo.svg';
+import codeEditor from '@/assets/codeEditor.svg';
 
 interface Item {
   text: string;
@@ -86,6 +94,7 @@ export default {
       searchMenuEntries,
       programmingPractices,
       java,
+      codeEditor,
     };
   },
   components: {

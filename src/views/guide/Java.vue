@@ -4,12 +4,27 @@
     <font-awesome-icon icon="search" color="white" style="font-size: 20pt"/>
     <input class="searchBarInput" type="text">
   </div>
-  <div class="menu">
+  <div class="columnCardContainer">
+    <card :cardTitle="'TEstingaisdngasdg'"></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
+    <card></card>
   </div>
 </template>
 
 <script lang="ts">
+import Card from '@/components/Card.vue';
+
 export default {
+  components: {
+    Card,
+  },
 };
 </script>
 
@@ -38,5 +53,13 @@ export default {
     outline: none;
     border: none;
   }
+}
+.columnCardContainer {
+  display: grid;
+  margin: 1rem 5rem;
+  justify-content: center;
+  place-items: center;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 20rem));
 }
 </style>

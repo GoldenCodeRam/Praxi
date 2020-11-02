@@ -20,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Programming',
     component: () => import('@/views/guide/Programming.vue'),
   },
+  {
+    path: '/codeFormatter',
+    name: 'Code Formatter',
+    component: () => import('@/views/codeFormatter.vue'),
+  },
 ];
 
 const router = createRouter({
