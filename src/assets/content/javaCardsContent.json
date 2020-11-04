@@ -1,0 +1,18 @@
+{
+  "Variables": {
+    "buttonLink": "String",
+    "cardHelp": "String"
+  },
+  "Functions": {
+    "buttonLink": "String",
+    "cardHelp": "String"
+  },
+  "Indenting": {
+    "buttonLink": "String",
+    "cardHelp": "String"
+  },
+  "Classes": {
+    "buttonLink": "",
+    "cardHelp": "How to create classes, how to correctly name them, and such."
+  }
+}

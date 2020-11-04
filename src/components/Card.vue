@@ -9,11 +9,14 @@
           </span>
         </button>
       </div>
-      <img class="cardIcon" v-bind:src="icon">
+      <img class="cardIcon" v-bind:src="icon" v-if="icon">
       <p class="cardTitle">
         {{cardTitle}}
       </p>
-      <button class="cardButton" @click="$router.push(link)">
+      <div v-if="cardBadges" class="badgeContainer">
+        test
+      </div>
+      <button class="cardButton" @click="goToLink">
         {{buttonText}}
       </button>
     </div>
@@ -21,6 +24,7 @@
 </template>
 
 <script lang="ts">
+import router from '@/router';
 
 export default {
   props: {
@@ -29,11 +33,19 @@ export default {
     buttonText: String,
     buttonLink: String,
     cardHelp: String,
+    cardBadges: String,
   },
   setup(props: any) {
-    const link = props.buttonLink !== undefined ? props.buttonLink.toString() : '';
+    function goToLink() {
+      router.options.routes.forEach((element) => {
+        if (element.path === props.buttonLink) {
+          router.push(props.buttonLink);
+        }
+      });
+    }
+
     return {
-      link,
+      goToLink,
     };
   },
 };
@@ -127,6 +139,11 @@ export default {
     button.cardButton:active {
       box-shadow: none;
       transform: translateY(5px);
+    }
+    .badgeContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
     }
   }
 }

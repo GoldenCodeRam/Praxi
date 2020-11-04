@@ -14,6 +14,9 @@ interface ListElement {
 }
 
 export default {
+  setup() {
+    return {};
+  },
   props: {
     title: String,
     showContent: Boolean,
@@ -26,13 +29,13 @@ h3 {
   font-family: 'Source Sans Pro';
   font-size: 16pt;
 
-  background-color: $white1;
+  background-color: $white0;
   padding: 1rem;
   margin-bottom: 5px;
 
-  border: 2px solid $white2;
+  border: 2px solid $gray0;
   border-radius: 10px;
-  box-shadow: 0px 5px 0px $white2;
+  box-shadow: 0px 5px 0px $gray0;
   -webkit-user-select: none;
 }
 h3.active {
@@ -48,7 +51,7 @@ h3.active {
     -moz-osx-font-smoothing: grayscale;
     font-size: 12pt;
 
-    background: $white2;
+    background: $white0;
 
     padding-top: 1rem;
     padding-bottom: 0.5rem;

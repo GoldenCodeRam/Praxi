@@ -5,11 +5,45 @@
     <input class="searchBarInput" type="text">
   </div>
   <div class="menu">
+    <card
+      v-for="(card, key) in cards" :key="key"
+      :cardTitle="card.cardTitle"
+      :cardHelp="card.cardHelp"
+      :buttonLink="card.buttonLink"
+      :buttonText="'See more'"/>
   </div>
 </template>
 
 <script lang="ts">
+import Card from '@/components/Card.vue';
+import javaCardsContent from '@/assets/content/javaCardsContent.json';
+import { ref } from 'vue';
+
+interface Card {
+  cardTitle: string;
+  buttonLink: string;
+  cardHelp: string;
+}
+
 export default {
+  setup() {
+    const cards = ref(Array<Card>());
+
+    Object.entries(javaCardsContent).forEach((element) => {
+      cards.value.push({
+        cardTitle: element[0].toString(),
+        buttonLink: Object.values(element[1])[0],
+        cardHelp: Object.values(element[1])[1],
+      });
+    });
+
+    return {
+      cards,
+    };
+  },
+  components: {
+    Card,
+  },
 };
 </script>
 
@@ -38,5 +72,10 @@ export default {
     outline: none;
     border: none;
   }
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 </style>

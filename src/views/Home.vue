@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import textPageContent from '@/views/pageContent.json';
+import textPageContent from '@/assets/content/pageContent.json';
 
 import gsap from 'gsap';
 import Card from '@/components/Card.vue';
